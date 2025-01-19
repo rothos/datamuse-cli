@@ -4,8 +4,10 @@ A command line interface for the Datamuse API.
 
 ## Installation
 
+This tool isn't uploaded to pypi yet because the name `datamuse-cli` is already taken there...
+
 ```bash
-pip install datamuse-cli
+pip install [TO_BE_DETERMINED]
 ```
 
 ## Usage
