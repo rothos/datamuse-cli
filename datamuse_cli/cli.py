@@ -123,7 +123,9 @@ def create_parser() -> argparse.ArgumentParser:
     
     parser.add_argument(
         '-t', '--topics',
-        help="Optional topic words. Results will be skewed toward these topics. At most 5 words can be specified. Space or comma delimited. Nouns work best."
+        type=str,
+        nargs=1,
+        help="Optional topic words. Results will be skewed toward these topics. At most 5 words can be specified, comma delimited. Nouns work best."
     )
     
     parser.add_argument(
