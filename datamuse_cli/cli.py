@@ -62,6 +62,7 @@ def create_parser() -> argparse.ArgumentParser:
         'ml',
         'sl',
         'sp',
+        'rhy',
         'n2a',
         'a2n',
         'syn',
@@ -80,6 +81,7 @@ def create_parser() -> argparse.ArgumentParser:
   ml   - "Means like" (words with similar meanings)
   sl   - "Sounds like" (words with similar pronunciation)
   sp   - "Spelled like" (words with similar spelling)
+  rhy  - Rhymes with
   n2a  - "Noun to adjective" (adjectives commonly used to describe the given noun)
   a2n  - "Adjective to noun" (nouns commonly modified by the given adjective)
   syn  - Synonyms
@@ -169,6 +171,7 @@ def query_datamuse(command: str, word: str, max_results: int, include_metadata: 
         'ml': 'ml',            # means like
         'sl': 'sl',            # sounds like
         'sp': 'sp',            # spelled like
+        'rhy': 'rel_rhy',      # rhymes with
         'n2a': 'rel_jja',      # noun to adjective
         'a2n': 'rel_jjb',      # adjective to noun
         'syn': 'rel_syn',      # synonyms

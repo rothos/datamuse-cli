@@ -27,6 +27,7 @@ positional arguments:
                                 pronunciation)
                           sp - "Spelled like" (words with similar
                                 spelling)
+                          rhy - Rhymes with
                           n2a - "Noun to adjective" (adjectives commonly
                                 used to describe the given noun)
                           a2n - "Adjective to noun" (nouns commonly
