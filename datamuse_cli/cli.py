@@ -228,8 +228,14 @@ def query_datamuse(command: str, word: str, max_results: int, include_metadata: 
     response = requests.get(endpoint, params=params)
     response.raise_for_status()
 
-    # Only keep the top max_results results, sorted by score
-    results = sorted(response.json(), key=lambda x: x['score'], reverse=True)[:max_results]
+    # Only keep the top max_results results, sorted by score.
+    # Not all results may have a score. We first return results with a score
+    # (sorted by score), and then return any remaining results without a score,
+    # in the order they were returned by the API.
+    results_with_score = [result for result in response.json() if 'score' in result]
+    results_without_score = [result for result in response.json() if 'score' not in result]
+    sorted_results_with_score = sorted(results_with_score, key=lambda x: x['score'], reverse=True)[:max_results]
+    results = sorted_results_with_score + results_without_score[:max_results - len(sorted_results_with_score)]
 
     return results
 
