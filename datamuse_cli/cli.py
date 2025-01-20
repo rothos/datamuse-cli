@@ -5,11 +5,12 @@ import json
 import sys
 import requests
 from typing import List, Dict, Any
+from importlib.metadata import version
 
+VERSION = version("datamuser")
 API_BASE = "https://api.datamuse.com/words"
 API_SUGGEST_BASE = "https://api.datamuse.com/sug"
 DEFAULT_MAX_RESULTS = 10
-VERSION = "0.1.0"
 
 # This class is borrowed from
 # https://stackoverflow.com/a/76962505/1516307
